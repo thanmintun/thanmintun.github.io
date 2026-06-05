@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(73, 159, 159);
+}
+h1{ text-align: center;
+}
+#myForm{
+    width: 40%;
+    margin: auto;
+}
+input[type="text"],input[type="email"],input[type="number"]
+{
+    width: 100%;
+    height: 30px;
+    outline: none;
+}
+input[type="text"]:focus, input[type="email"]:focus,input[type="number"]:focus
+{
+    letter-spacing: 5px;
+    border: 4px solid rgb(197, 197, 197);
+}
+input[type="radio"]:checked + label{color: red;
+letter: spacing 5px;
+text-transform: uppercase;}
+input[type="checkbox"]:disabled + label{
+    font-style: italic;
+    color: #fea;
+}
+input[type="checkbox"]:checked+label{
+    font-style: normal;
+    color: brown;
+}
+ul li:first-child{background-color: red;}
+ul li:last-child{background-color: blue;}
+ul li:nth-child(5){background-color: yellow;}
+p:empty{background-color: aqua;
+height: 20px;}
+/* class နဲနမည်ပေးထားလို့    . နဲပြန်ခေါ်တာ */
+.register-btn:hover{background-color: rgb(111, 75, 32);
+color: aliceblue;}
+.register-btn{
+    width: 120px;
+    height: 45px;
+}

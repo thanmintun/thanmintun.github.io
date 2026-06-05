@@ -1,0 +1,36 @@
+*{color: red;}
+h1{color: blue;
+text-align: center;}
+a[title="facebook"]{color: rgb(27, 8, 150);}
+#idselector{color: red;
+font-size: 20px;}
+.classselector{color: rgb(56, 217, 59);
+text-transform: capitalize;
+font-size: 10px;text-indent: 50px;}
+
+/* class selector  */
+.classselector{color: rgb(22, 42, 141)
+    ;text-transform: capitalize;
+font-size: 20px;
+text-indent: 50px;}
+
+
+/* Descendant Selector  */
+.desc a{color: rgb(10, 76, 163);}
+
+
+/* Child Selector  */
+.child >span{color: rgb(104, 14, 114);}
+.child> a {color: gray;}
+/* target  */
+a:link{color: red;
+text-decoration: none;}
+a:hover{ color: green;
+letter-spacing: 2px;}
+a:active{color: blue;
+font-size: 20px;}
+a:visited{color: peru;}
+:target{color: rgb(26, 88, 146);
+font-size: 20px;
+text-transform: uppercase;
+letter-spacing: 5px;}
