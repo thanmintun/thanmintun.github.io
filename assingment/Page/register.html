@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>စာရင်းသွင်းမည်။</title>
 </head>
 <body>
         <h1 align="center">အမည်စရင်းပေးသွင်းရန်</h1>
     <form action="request.php" method="get" align="center">
         <label for="Name"><b>အမည်</b></label>
-        <input type="text" name="Name" id="Name" placeholder="ကို/မ.......">
+        <input type="text" name="Name" id="Name" placeholder="ကို,မ.......">
         <label for="Phone"><b>ဖုန်းနံပါတ်</b></label>
         <input type="tel" name="Phone" id="Phone" placeholder="09 123 456 789"><br><br>
         <label for="Address"><b>နေရပ်လိပ်စာ</b></label>
-        <input type="text" name="Adress" id="Address">
+        <input type="text" name="Adress" id="Address" placeholder="Mandalay">
         <label for="Father"><b>အဘ အမည်</b></label>
-        <input type="text" name="Father" id="Father">
+        <input type="text" name="Father" id="Father" placeholder=" ဉီး">
         <br><br>
         <input type="radio" name="Gender" id="Male" value="Male">
         <label for="Male">Male</label>
         <input type="radio" name="Gender" id="Female" value="Female">
         <label for="Female">Female</label>
-        <input type="text" name="Gender" id="Other">
-        <label for="Other">Other</label>
-
-    </form>
-    
+        <input type="radio" name="Gender" id="Other">
+        <label for="Other">Other</label><br><br>
+        <input type="checkbox" name="Rule" id="Rule" required>
+        <label for="checkbox">စည်ကမ်းများကိုသဘောတူသည်။</label>
+        <br><br>
+        <a href="../Page/Home.html"><button type="submit">ပေးသွင်းမည်</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="../Page/Home.html">နောက်မှ</a>
+    </form>    
 </body>
+    <footer align="center">
+    <h6>&copy;Created by ThanMinTun &nbsp;&nbsp;|&nbsp;&nbsp;<span>&#10142; Only HTML Assingment</span></h6>
+    
 </html>
