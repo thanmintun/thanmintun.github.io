@@ -1,4 +1,5 @@
-*{color: red;}
+/* *{color: red;} */
+/* *{ margin: 50%;padding: 0px ;} */
 h1{color: blue;
 text-align: center;}
 a[title="facebook"]{color: rgb(27, 8, 150);}
@@ -34,3 +35,87 @@ a:visited{color: peru;}
 font-size: 20px;
 text-transform: uppercase;
 letter-spacing: 5px;}
+
+
+/* Border */
+.borderOne{border: 20px double green;}
+/* size style colour */
+.borderTwo{border-top: 5px solid red;}
+/* border-bottom: 5px solid red; */
+/* border-left: 5px solid red; */
+/* border-right: 5px solid red; */
+/* border width */
+.borderThree{border-style: solid;
+    /* border-width: 10px; */
+    /* T /R /B/L */
+    /* border-width: 5px 50px; */
+    /* t&B /L&T */
+    border-width: 5px 20px 15px;
+    /* T/ L&T / B နာရီလက်တံ သွားတဲ့ အတိုင်း အပေါ်/ညာ/အောက်/ဘယ်/ */
+    /* border style  */
+border-width: 5px 10px 15px 20px;}
+    /* border style  */
+
+.borderFour{
+    /* border-style: solid; */
+    /* border-style: dotted solid; */
+    border-style: dotted dashed solid double;
+    border-width: 5px;
+    border-color: green yellow red blue;
+}
+
+    .marginOne{border: 2px solid red;margin-top: 80px;}
+
+
+    .paddinOne{border: 2px solid red ;padding: 50px; }
+    
+
+
+    .Inline{border: 2px solid red;
+    width: 300px; display: inline-block;}
+    .block{border: 2px solid red;
+    width: 300px;
+display:inline-block;}
+
+
+
+/* float  */
+
+.float_image1{
+    width: 50%;
+    float: right;
+}
+.clear{
+    clear: both;
+}
+.float_image2{
+    width: 50%; 
+    float: left;
+}
+/* Flex */
+.Flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* top buttom */
+    /* justify-content: center; */
+    height: 100px;
+    background-color: red;
+}
+
+/* Girld */
+.Grid{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    /* grid-template-columns: auto auto auto; */
+    color: aliceblue;
+    /* grid: row gap 40px; */
+    /* grid-column-gap: 30px; */
+    grid-gap: 30px;
+
+}
+.Grid_child{
+    padding: 20px;
+    /* text-align: center;  ရေးထားတဲ့စာတွေက အလယ်မှာရောက်အောင်ရေးတာ */
+    text-align: center;   }
