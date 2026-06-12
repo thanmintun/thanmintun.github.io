@@ -119,3 +119,91 @@ display:inline-block;}
     padding: 20px;
     /* text-align: center;  ရေးထားတဲ့စာတွေက အလယ်မှာရောက်အောင်ရေးတာ */
     text-align: center;   }
+
+
+    /* .Grid */
+    .row_add{
+grid-column-start: 2;
+grid-row-start: 1;
+grid-row-end: 3;
+    }
+    .colum_add{
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+    .row_add1{
+        grid-row-start: 3;
+        grid-row-end: 5;
+    }
+    .colum_add2{
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    /* mobile first  */
+    .media{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 20px;
+    }
+    @media screen and (min-width: 600px){
+
+    .media{
+        grid-template-columns: repeat(2,1fr);
+    }
+    }
+    @media screen and (min-width: 768) {
+        .media{grid-template-columns: repeat(3,1fr);}
+    }
+    @media screen and (min-width: 1024px) {
+        .media{grid-template-columns: 4,1fr;}
+        
+    }
+
+
+    /* position */
+    .position_relative{
+        border: 2px solid red;
+        width: 1000px;
+        height: 500px;
+    }
+    .position_relative_child{
+        border: 2px solid red;
+        width: 500px;
+        height: 200px;
+        position: relative;
+        /* top buttom left right  */
+        top: 5px;
+        left: 50px;
+    }
+
+
+
+    /* Online font  */
+    .Online{
+  font-family: "Playwrite GB J", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* offlinfont */
+@font-face {
+    font-family: abc;
+    src: url(font\Playwrite_GB_J\PlaywriteGBJ-VariableFont_wght.ttf);
+    font-size: medium;
+    font-weight: 400;
+    font-style: italic;
+}
+.offline{
+    font-family: abc;
+}
+
+/* icon lesson */
+.icon{
+    font-size: 50px;
+}
+@font-face {
+    font-family: icon5;
+    src: url(icon\css\all.min.css);
+}

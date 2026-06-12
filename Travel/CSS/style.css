@@ -1,0 +1,6 @@
+@font-face {
+    font-family:ChangaOne ;
+    src: url(../FONT/ChangaOne-Regular.ttf);
+}
+.Welcome{font-family: ChangaOne;
+font-size: medium;}
