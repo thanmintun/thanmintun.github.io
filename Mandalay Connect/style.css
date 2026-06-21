@@ -1,15 +1,26 @@
+@font-face {
+    font-family:'Fraunces';
+    src: url(font/Fraunces.ttf) format(truetype);
+    font-family: 'OleoScript-Regular';
+    src: url(font/OleoScript-Regular.ttf) format(truetype);
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    /* font-family: 'Segoe UI', sans-serif; */ 
+    
+}
+
 }
 
 body {
-    background-color: #fdfdfd;
+    background-color: #ececec;
 }
 
+/* star nav */
+
 nav {
+  
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
@@ -40,21 +51,28 @@ nav {
 .ul{
 display: flex;
 list-style: none;
+
 }
 .li a{
+    display: inline-block;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 24px;
     text-decoration: none;
-    margin-left: 50px;
+    margin-left: 70px;
     color: #ff5e62;
 }
 .li a:hover{
-    background-color: #ff5e62;
     padding: 3px;
-    color: #fdfdfd;
+    transform: scale(1.2);
+    transition: 0.3s;
+ 
 }
+/* end nav */
+
+/* star banner */
 
 .hero {
+  
     margin-top: 10px;
     text-align: center;
     padding: 100px 20px;
@@ -78,7 +96,272 @@ list-style: none;
     cursor: pointer;
     transition: 0.3s;
 }
+.cta-btn a{
+    text-decoration: none;
+    color: #000;
+}
 
 .cta-btn:hover {
     transform: scale(1.1);
 }
+
+/* end banner */
+/* star bodyimgs */
+.image{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+.imgs{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 50px 50px 0px;
+    width: 300px;
+   height: 350px;
+   gap: 30px;
+}
+/* end bodyimgs */
+/* start footer */
+.footerbackground{
+    background-color:#ffffff;
+    color: #414141;
+}
+.footer-content{
+    width: 80%;
+    margin: auto;
+    font-size: 19px;
+}
+.ulq{
+    list-style: none;
+    /* align-items: center; */
+}
+.liq a{
+    display: block;
+    text-decoration: none;
+    color: #000000;
+}
+.liq a:hover{
+    color: #ff5e62;
+    transform: scale(1.2);
+    transition: 0.3s;
+    
+}
+.liq{
+    margin-top: 10px;
+    position: relative;
+    left: -35px;
+    
+}
+.address{
+    margin-top: -5px;
+}
+.footer-content{
+    display: flex;
+    gap: 250px;
+}
+.footer-bottom{
+    text-align: center;
+}
+
+/* end footer */
+
+
+/* start Sign Up page */
+
+.sg_content{
+    display: flex;
+    width: 80%;
+margin: auto;
+
+
+justify-content: center;
+text-align: center;
+min-height: 100vh;
+
+   
+}
+.sg_card{
+    margin-top: 80px;
+     width: 400px;
+    height: 550px;
+    border: #000000;
+    background-color: rgb(241, 241, 241);
+    border-radius: 25px;
+    padding: 50px 70px;
+    box-shadow: 0px 5px 20px 1px rgb(156, 156, 156);
+    
+}
+.signuppage{
+
+}
+.title{
+    margin-top: -20px;
+    font-size: 50px;
+    text-align: center;
+    color: #ff5e62;
+}
+.fname,.sname,.age,.sex,.email,.password,.confirmpassword,.singupbutton{
+    display: flex;
+    justify-content:flex-start;
+    margin-left: 60px;
+    align-items: center;
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+ #namebox ,#sname,#age,#sex,#email,#password,#confrim{
+        width: 300px;
+        height: 30px;
+    }
+.signupbutton{
+        /* display: block; */
+        width: 200px;
+        height: 40px;
+        margin-top: 20px;
+        justify-content: center;
+        background-color: #ff5e62;
+        border: none;
+        border-radius: 8px;
+    }
+.dtitle{
+    font-size: 40px;
+    color: #ff5e62;
+    text-align: center;
+    margin-top: 50px;
+}
+.discover-container{
+    margin: 50px ;
+}
+.pfimg{
+    width: 250px;
+    height: 300px;
+}
+.profile-grid{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* grid-template-rows: repeat(2,1fr); */
+    gap: 30px;
+}
+.profile-card{
+    background-color: #ff5e62;
+    width: 250px;
+    height: 350px;
+    padding: 20px 20px 110px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 6px 2px #720e0f94;
+}
+.card_info {
+    color: #ececec;
+    font-size: 18px;
+}
+.address{
+    margin-top: -15px;
+}
+.like-btn{
+    display: inline-block;
+    font-size: 25px;
+    background-color: rgb(232, 232, 232);
+    border: none;
+    width: 250px;
+    height: 40px;
+    margin-right: 50px;
+    border-radius: 5px;
+
+}
+.like-btn a:hover{
+    display: block;
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+
+/* profile */
+/* .p_container{
+    width: 80%;
+    margin: auto;
+    background-color: #ff5e62;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-top: 50px ;
+    margin-bottom: 50px;
+}
+#pimg{
+
+    width: 300px;
+    height: 300px;
+}
+.profilename{
+    background-color: #ff5e62;
+}
+.title_e{
+    color: #ffffff;
+     width: 40%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+.t1{
+    padding-top: 20px;
+   
+}
+.title_content{
+    font-size: 35px;
+    margin-left: 40%;
+    margin-top: -30px;
+} */
+.profile-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.profile-card-main {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ff5e62;
+    margin-bottom: 15px;
+}
+
+.interests-tags {
+    display: flex;
+    margin-left: 150px;
+    margin-top: -30px;
+}
+
+.profile-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.edit-btn, .logout-btn {
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+.profile-actions a{
+    text-decoration: none;
+    color: #040404;
+}
+.profile-actions a:hover{
+    display: block;
+transform: scale(1.2);
+transition: 0.3s;
+}
+
+.edit-btn { background: #ff5e62; color: white; }
+.logout-btn { background: #eee; color: #333; }
