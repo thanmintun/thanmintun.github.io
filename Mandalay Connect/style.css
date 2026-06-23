@@ -221,10 +221,11 @@ min-height: 100vh;
         border-radius: 8px;
     }
 .dtitle{
-    font-size: 40px;
-    color: #ff5e62;
+    font-size: 60px;
+    color: #3c3c3c;
     text-align: center;
     margin-top: 50px;
+    margin-bottom: 100px;
 }
 .discover-container{
     margin: 50px ;
@@ -234,12 +235,12 @@ min-height: 100vh;
     height: 300px;
 }
 .profile-grid{
+    display: grid;
     width: 90%;
     margin: auto;
-    display: grid;
     grid-template-columns: repeat(4,1fr);
-    /* grid-template-rows: repeat(2,1fr); */
-    gap: 30px;
+    grid-template-rows: repeat(2,1fr);
+    gap: 35px;
 }
 .profile-card{
     background-color: #ff5e62;
@@ -273,43 +274,6 @@ min-height: 100vh;
     transition: 0.3s;
 }
 
-/* profile */
-/* .p_container{
-    width: 80%;
-    margin: auto;
-    background-color: #ff5e62;
-    width: 250px;
-    height: 250px;
-    border-radius: 100%;
-    overflow: hidden;
-    margin-top: 50px ;
-    margin-bottom: 50px;
-}
-#pimg{
-
-    width: 300px;
-    height: 300px;
-}
-.profilename{
-    background-color: #ff5e62;
-}
-.title_e{
-    color: #ffffff;
-     width: 40%;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-}
-.t1{
-    padding-top: 20px;
-   
-}
-.title_content{
-    font-size: 35px;
-    margin-left: 40%;
-    margin-top: -30px;
-} */
 .profile-container {
     max-width: 500px;
     margin: 50px auto;
@@ -363,3 +327,42 @@ transition: 0.3s;
 
 .edit-btn { background: #ff5e62; color: white; }
 .logout-btn { background: #eee; color: #333; }
+
+/* about us */
+.about-us {
+    display: flex;
+    text-align: center;
+    justify-content:center;
+    padding: 60px 20px;
+}
+
+.about-content {
+
+    max-width: 600px;
+    margin-bottom: 10px;
+    margin-top: -35px;
+
+}
+
+.mandalay-img {
+    margin-top: 5px;
+    margin-bottom: 50px;
+    width: 400px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 6px 2px #00000094;
+
+}
+.about-image{
+    justify-content: space-between;
+    margin: -50px 50px 50px 150px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 600px;
+gap: 30px
+;
+}
+.mandalay-img:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
