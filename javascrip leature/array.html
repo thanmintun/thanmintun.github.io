@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Array</h1>
+    <script>
+
+
+        // array
+        let studentslist = ["than", "Min", "Tun", "Nguyen", "hlahla"]
+        console.log(studentslist);
+        console.log(studentslist.length);
+        console.log(studentslist[0]);
+
+        // array.push
+        studentslist.push("Thanmintin");
+        console.log(studentslist);
+
+        // array.pop
+        studentslist.pop();
+        console.log(studentslist);
+
+        // array.shift
+        studentslist.shift();
+        console.log(studentslist);
+
+        // array.unshift
+        studentslist.unshift("Thanmintun");
+        console.log(studentslist);
+
+        // array.sort()
+        studentslist.sort();
+        console.log(studentslist);
+        let studentslist2 = ['kyawkyaw', 'minmin', 'tuntun', 'nguyenguyen', 'hlahlahlahla']
+        studentslist2.sort();
+        console.log(studentslist2);
+        // array.reverse()
+        studentslist2.reverse();
+        console.log(studentslist2);
+
+        studentslist2.sort().reverse;
+        console.log(studentslist2);
+
+        // Array.toString
+        studentslist2.toString();
+        console.log(studentslist2.toString);
+
+        // stringarray
+        let studentlist3 = 'than min tun,aung aung,hla hla';
+        studentlist3array = studentlist3.split(',');
+        console.log(studentlist3array);
+let array1=[1,2,3,4,5];
+let array2=[6,7,8,9,10];
+let array3=[11,12,13,14,15];
+let result=array1.concat(array2,array3); 
+console.log(result);
+let result2=[...array1,...array2,...array3];
+console.log(result2);   
+    </script>
+</body>
+
+</html>
