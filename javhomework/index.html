@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <nav>
+        <a href="star.html">Star</a>
+    </nav>
+    <h1>Guess number</h1>
+    <script>
+        let secretNumber = 5;
+        let count = 0;
+        let guessnumber
+       do {
+        guessnumber = parseInt(prompt(`Enter a guess number`));
+        count++;
+        if(guessnumber<secretNumber){alert(`guess is less than secret number   --Times${count}`);}
+        else if(guessnumber>secretNumber){alert(`guess is greater than secret number --Times${count}`);}
+        else if(guessnumber==secretNumber){document.write(`guess is correct    --Times${count}`);}
+        
+       } while (guessnumber!==secretNumber);
+    </script>
+</body>
+</html>
