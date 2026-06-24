@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>faction</H1>
+    <script>
+        function sayhello(){
+            document.write("Hello World");
+        }
+
+
+        // function with parameters/arguments
+        function sum(num1,num2){
+           let result= num1+num2;
+           document.write(`The sum of ${num1} and ${num2} is ${result}`);
+        }
+
+        sum(10,50);
+        sum(100,50);
+        sum(1000,50);
+        sum(10000,50);
+// fuction with defalut parameter
+function multiply(num1=7,num2=10){
+    let result= num1*num2;
+    document.write(` <br>The product of ${num1} and ${num2} is ${result}`);}
+multiply();
+multiply(10);
+multiply(10,10);
+
+// function with return statement
+
+fuction sub(num1,num2){
+    let result=num1-num2;
+    return result;
+}
+let data=sub(10,5);
+document.write(`<br>the result is ${data}`);
+
+if(data>0){
+    document.write(`<br>The result is greater than 0`);
+}     
+
+
+
+    </script>
+</body>
+</html>
