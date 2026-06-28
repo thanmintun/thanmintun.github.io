@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="time.css">
+    <title>Clock</title>
+</head>
+
+<body>
+    <h1>Clock</h1>
+    <div class="ddd">
+        <div class="div1">
+            <p class="hour"></p>
+            <p>:</p>
+            <p class="minute"></p>
+            <p>:</p>
+            <p class="second"></p>
+        </div>
+
+        <div class="div2">
+            <p class="date"></p>
+            <p class="month"></p>
+            <p class="year"></p>
+            <p class="AmPm"></p></div>
+             
+            <div class="div3">
+                <p class="day"></p>
+            </div></div>
+</body>
+
+
+<script>
+    function getTimeFormet() {
+        let newDate = new Date()
+        console.log(newDate)
+        //hour
+        let gethour = newDate.getHours()
+        let hourNames = ["24", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"]
+        let hour = hourNames[gethour]
+        console.log(hour)
+
+        //minute
+        let getminute = newDate.getMinutes()
+        let minuteNames = ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59"]
+        let minute = minuteNames[getminute]
+        console.log(minute)
+
+        //second
+
+        let second = newDate.getSeconds()
+        console.log(second)
+
+
+        // day
+        let getday = newDate.getDay()
+        let dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        let day = dayNames[getday]
+        console.log(day)
+
+
+
+
+        let date = newDate.getDate()
+        console.log(date)
+
+
+        // month
+        let getmonth = newDate.getMonth()
+        let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        let month = monthNames[getmonth]
+        console.log(month)
+
+
+
+        let year = newDate.getFullYear()
+        console.log(year)
+        if (hour > 12) {
+            hour = hour - 12
+            ampm = "PM"
+        }
+        else {
+            ampm = "AM"
+        }
+
+
+
+        document.querySelector('.hour').innerHTML = hour
+        document.querySelector('.minute').innerHTML = minute
+        document.querySelector('.second').innerHTML = second
+        document.querySelector('.day').innerHTML = day
+        document.querySelector('.date').innerHTML = date
+        document.querySelector('.month').innerHTML = month
+        document.querySelector('.year').innerHTML = year
+        document.querySelector('.AmPm').innerHTML = ampm
+    }
+
+    setInterval(getTimeFormet, 1000)
+
+</script>
+
+</body>
+
+</html>
