@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework</title>
+</head>
+
+<body>
+    <h1>29-6-2026(homework)</h1>
+    <form action="" name="myForm" id="myForm">
+
+
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name"><br><br>
+
+        <label for="prize">Prize</label>
+        <input type="number" name="prize" id="prize"><br><br>
+
+        <label for="Quantity">Qty</label>
+        <input type="number" name="Quantity" id="Quantity"><br><br>
+
+        <button type="button" onclick="showData()"> Cart</button>
+
+
+
+
+    </form>
+    <table cellspacing="0" cellpadding="20" border="1" class="myTable">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Prize</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+        <tfoot id="myTfoot">
+            <tr>
+                <th colspan="4">Grand Total</th>
+                <th id="grandtotal"></th>
+                </tr>   
+        </tfoot>
+    </table>
+
+
+
+    <style>
+        body {
+            text-align: center;
+            background-color: rgb(237, 237, 237);
+            align-items: start;
+        }
+
+        #myForm {
+            display: inline-block;
+            background-color: rgb(213, 213, 213);
+            margin-top: 100px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .myTable {
+            width: 80%;
+            margin: auto;
+            margin-top: 100px;
+            text-align: center;
+        }
+    </style>
+    <script>
+
+
+        // get data
+        let itemList = [];
+        function showData() {
+            // let Name = document.getElementById("name").value;
+            let Name = document.myForm.name.value;
+            let Prize = document.myForm.prize.value;
+            let Quantity = document.myForm.Quantity.value;
+        
+        console.log(itemList);
+        // creat Object
+        let item = {
+            itemName: Name,
+            itemPrize: Prize,
+            itemQuantity: Quantity,
+            itemTotal: Quantity * Prize
+        }
+
+        //  object to array
+        itemList.push(item);
+        itemListToTable();
+
+    }
+
+        function itemListToTable() {
+            let html = '';
+            for (let i = 0; i < itemList.length; i++) {
+                html += `<tr>
+                    <td>${i + 1}</td>
+                    <td>${itemList[i].itemName}</td>
+                    <td>${itemList[i].itemPrize}</td>
+                    <td>${itemList[i].itemQuantity}</td>
+                    <td>${itemList[i].itemTotal}</td>
+                </tr>`;
+            }
+            document.getElementById("myTbody").innerHTML = html;
+            let Gtotal= 0;
+            for (let i = 0; i < itemList.length; i++) {
+                Gtotal += itemList[i].itemTotal;
+            }
+            document.getElementById("grandtotal").innerHTML = Gtotal;
+        }
+            
+
+    </script>
+
+
+</body>
+
+</html>

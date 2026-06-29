@@ -1,0 +1,86 @@
+<style>
+    body { font-family: sans-serif; padding: 20px; background-color: #f9f9f9; }
+    .container { max-width: 700px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    input { width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+    button { width: 100%; padding: 12px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; }
+    th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    .del-btn { background-color: #dc3545; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+</style>
+
+<div class="container">
+    <h2>ချေးငွေမှတ်တမ်း (ရက်အလိုက်တွက်ချက်ရန်)</h2>
+    <input type="text" id="name" placeholder="အမည်">
+    <input type="number" id="amount" placeholder="ငွေပမာဏ">
+    <input type="number" id="rate" placeholder="တစ်လအတိုးနှုန်း (%)">
+    <input type="date" id="date">
+    <button onclick="addRecord()">မှတ်တမ်းထည့်မည်</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>အမည်</th>
+                <th>မူရင်းငွေ</th>
+                <th>ရက်ပေါင်း</th>
+                <th>အတိုး</th>
+                <th>စုစုပေါင်း</th>
+                <th>ဖျက်</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+
+<script>
+    function addRecord() {
+        const name = document.getElementById('name').value;
+        const amount = parseFloat(document.getElementById('amount').value);
+        const rate = parseFloat(document.getElementById('rate').value);
+        const startDate = new Date(document.getElementById('date').value);
+        
+        if(!name || !amount || !rate || !startDate) { alert("အချက်အလက်အားလုံးဖြည့်ပါ"); return; }
+
+        const record = { id: Date.now(), name, amount, rate, startDate: startDate.getTime() };
+        let records = JSON.parse(localStorage.getItem('loanRecords') || '[]');
+        records.push(record);
+        localStorage.setItem('loanRecords', JSON.stringify(records));
+        displayRecords();
+    }
+
+    function displayRecords() {
+        const tbody = document.getElementById('tableBody');
+        const records = JSON.parse(localStorage.getItem('loanRecords') || '[]');
+        const today = new Date();
+        
+        tbody.innerHTML = '';
+        records.forEach(r => {
+            const start = new Date(r.startDate);
+            const diffTime = Math.abs(today - start);
+            const days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            // တစ်လကို ရက် ၃၀ သတ်မှတ်ပြီး တွက်ချက်ခြင်း
+            const monthlyInterest = (r.amount * r.rate) / 100;
+            const dailyInterest = monthlyInterest / 30;
+            const totalInterest = (dailyInterest * days).toFixed(0);
+            const totalAmount = r.amount + parseInt(totalInterest);
+
+            tbody.innerHTML += `<tr>
+                <td>${r.name}</td>
+                <td>${r.amount.toLocaleString()}</td>
+                <td>${days} ရက်</td>
+                <td>${parseInt(totalInterest).toLocaleString()}</td>
+                <td>${totalAmount.toLocaleString()}</td>
+                <td><button class="del-btn" onclick="deleteRecord(${r.id})">x</button></td>
+            </tr>`;
+        });
+    }
+
+    function deleteRecord(id) {
+        let records = JSON.parse(localStorage.getItem('loanRecords') || '[]');
+        records = records.filter(r => r.id !== id);
+        localStorage.setItem('loanRecords', JSON.stringify(records));
+        displayRecords();
+    }
+    displayRecords();
+</script>

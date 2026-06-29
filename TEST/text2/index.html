@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <title>ချေးငွေမှတ်တမ်း စာရင်း</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input { width: 100%; padding: 8px; margin: 5px 0; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; cursor: pointer; margin-top: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>ချေးငွေမှတ်တမ်း ထည့်သွင်းရန်</h2>
+    <input type="text" id="name" placeholder="အမည်">
+    <input type="number" id="amount" placeholder="ချေးငွေပမာဏ">
+    <input type="number" id="rate" placeholder="လစဉ်အတိုးနှုန်း (%)">
+    <input type="date" id="date">
+    <button onclick="addRecord()">မှတ်တမ်းတင်မည်</button>
+
+    <table id="recordTable">
+        <thead>
+            <tr>
+                <th>အမည်</th>
+                <th>ပမာဏ</th>
+                <th>အတိုး(လစဉ်)</th>
+                <th>ရက်စွဲ</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+</div>
+
+<script>
+    function addRecord() {
+        const name = document.getElementById('name').value;
+        const amount = document.getElementById('amount').value;
+        const rate = document.getElementById('rate').value;
+        const date = document.getElementById('date').value;
+
+        if(!name || !amount || !rate || !date) { alert("အချက်အလက်အားလုံးဖြည့်ပါ"); return; }
+
+        const record = { name, amount, rate, date };
+        let records = JSON.parse(localStorage.getItem('loanRecords') || '[]');
+        records.push(record);
+        localStorage.setItem('loanRecords', JSON.stringify(records));
+        
+        displayRecords();
+    }
+
+    function displayRecords() {
+        const tableBody = document.getElementById('tableBody');
+        const records = JSON.parse(localStorage.getItem('loanRecords') || '[]');
+        tableBody.innerHTML = '';
+        records.forEach(r => {
+            const interest = (r.amount * r.rate) / 100;
+            tableBody.innerHTML += `<tr>
+                <td>${r.name}</td>
+                <td>${r.amount}</td>
+                <td>${interest}</td>
+                <td>${r.date}</td>
+            </tr>`;
+        });
+    }
+
+    // စဖွင့်ဖွင့်ချင်း သိမ်းထားတဲ့ စာရင်းတွေကို ပြမယ်
+    displayRecords();
+</script>
+
+</body>
+</html>

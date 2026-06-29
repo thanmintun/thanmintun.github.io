@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="myid"> DOM </h1>
+
+    <p class="myclass">This is a paragraph1.</p>
+    <p class="myclass">This is a paragraph2.</p>
+    <p class="myclass">This is a paragraph3.</p>
+
+    <script>
+        //id selector
+        let myid=document.getElementById("myid");
+        console.log(myid.innerHTML);
+
+        document.write(myid.innerHTML);
+        document.write("<br>");
+        document.write(myid.innerHTML);
+
+
+ 
+
+        //class selector
+let myclass=document.getElementsByClassName("myclass");
+console.log(myclass[1].innerHTML);
+
+//query selector
+let myquery =document.querySelector(".myclass");
+console.log(myquery.innerHTML);
+let myqueryid=document.querySelector("#myid");
+console.log(myquery.innerHTML);
+
+
+//tag selector
+let mytag=document.getElementsByTagName("p");
+console.log(mytag[0].innerHTML);
+
+//querySelectorAll
+let myqueryall=document.querySelectorAll(".myclass");
+console.log(myqueryall[2].innerText);
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
